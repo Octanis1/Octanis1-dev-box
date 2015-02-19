@@ -9,12 +9,9 @@ This Virtual Machine includes:
 - FreeCAD
 - KiCAD
 
-
-Prerequisites
--------------
-- Install **VirtualBox** (linux:repos, mac/win:virtualbox.org)
+**Required:**
+- Install **VirtualBox** and **Vagrant** (vagrantup.com / virtualbox.org)
     - On Linux, you must add your user to the `vboxusers` group since this VM captures USB devices: `sudo usermod -a -G vboxusers $USER`
-- Install **Vagrant**    (linux:repos, mac/win:vagrantup.com)
 
 How to use
 -----
