@@ -2,11 +2,12 @@ Octanis 1 Dev Box
 ==============
 
 This Virtual Machine includes:
-	- TI MSP430 Toolchain
-	- Octanis 1 rover simulator (ROS and Gazebo)
-	- Octanis 1 CAD files, software and simulation config
-	- FreeCAD
-	- KiCAD
+
+- TI MSP430 Toolchain
+- Octanis 1 rover simulator (ROS and Gazebo)
+- Octanis 1 CAD files, software and simulation config
+- FreeCAD
+- KiCAD
 
 
 Prerequisites
