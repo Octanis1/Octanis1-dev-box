@@ -48,10 +48,12 @@ apt-get install --force-yes -y ros-indigo-desktop-full
 echo "Downloading Energia and Eclipse, making shortcut on Desktop"
 wget http://energia.nu/downloads/downloadv3.php?file=energia-0101E0014-linux.tgz
 tar xvf downloadv3.php\?file\=energia-0101E0014-linux.tgz 
+mv energia-0101E0014 /home/vagrant/energia-0101E0014
 ln -s /home/vagrant/energia-0101E0014/energia /home/vagrant/Desktop/energia 
 
 wget http://mirror.switch.ch/eclipse/technology/epp/downloads/release/luna/SR1a/eclipse-cpp-luna-SR1a-linux-gtk.tar.gz
 tar xvf eclipse-cpp-luna-SR1a-linux-gtk.tar.gz 
+mv eclipse /home/vagrant/eclipse
 ln -s /home/vagrant/eclipse/eclipse /home/vagrant/Desktop/eclipse
 
 
@@ -64,6 +66,7 @@ git clone https://github.com/Octanis1/Octanis1-3D-Simulation.git /home/vagrant/D
 git clone https://github.com/Octanis1/Octanis1-Energia.git /home/vagrant/Desktop/Octanis1-Energia
 git clone https://github.com/Octanis1/Octanis1-Documentation.git /home/vagrant/Desktop/Octanis1-Documentation
 
+chown vagrant:vagrant /home/vagrant/Desktop -R
 
 echo "Setting up keyboard to CH-DE"
 
@@ -76,7 +79,7 @@ rm -rf /home/vagrant/.mozilla
 wget https://raw.githubusercontent.com/Octanis1/Octanis1-dev-box/master/setup/mozzarella.tar.gz
 tar xvf mozzarella.tar.gz
 mv .mozilla /home/vagrant/.mozilla
-chown vagrant /home/vagrant/.mozilla -R
+chown vagrant:vagrant /home/vagrant/.mozilla -R
 
 
 echo "Rebooting."
