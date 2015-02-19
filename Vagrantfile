@@ -8,6 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "ubuntu/trusty32"
   config.vm.host_name = "Octanis1-dev-box"
   config.vm.provision :shell, path: "setup/bootstrap.sh"
+  config.vm.provision :shell, path: "setup/onboot.sh", run: "always"
 
   # Enable USB access
   usb_devs = [
