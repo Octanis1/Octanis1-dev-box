@@ -18,7 +18,7 @@ How to use
 -----
 1. Clone this repo, `cd` into it.
 2. `vagrant up`
-	- Creates the VM. The first time you do this, setup will take about an 30min and ~10GB of disk space. While it is installing, do not use the VM!
+	- Creates the VM. The first time you do this, setup will take about 30min and ~10GB of disk space. While it is installing, do not use the VM! Use this command to start the VM whenever you need it.
 3. `vagrant ssh` 
 	- SSH into the VM. 
 4. Use the GUI window (for FreeCAD, KiCAD, etc.). Login with vagrant / vagrant.
