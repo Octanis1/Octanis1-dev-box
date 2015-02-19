@@ -6,7 +6,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "ubuntu/trusty32"
-  config.vm.host_name = "msp430-dev-box"
+  config.vm.host_name = "Octanis1-dev-box"
   config.vm.provision :shell, path: "setup/bootstrap.sh"
 
   # Enable USB access
@@ -30,6 +30,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       vb.customize ['usbfilter', 'add', '0', '--target', :id, '--vendorid', dev[0], '--productid', dev[1], '--name', dev[2]]
     end
     # Don't boot with headless mode
-    # vb.gui = true
+    vb.gui = true
   end
 end

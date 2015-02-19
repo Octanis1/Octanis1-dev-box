@@ -1,6 +1,13 @@
-MSP430 Dev Box
+Octanis 1 Dev Box
 ==============
-MSP430 Development Environment With Vagrant and VirtualBox. The binary version of TI's opensource GCC (based on 4.9) and mspdebug are preinstalled. This VM supports compiling msp430 code and programming devices.
+
+This Virtual Machine includes:
+	* TI MSP430 Toolchain
+	* Octanis 1 rover simulator (ROS and Gazebo)
+	* Octanis 1 CAD files, software and simulation config
+	* FreeCAD
+	* KiCAD
+
 
 Prerequisites
 -------------
@@ -8,7 +15,7 @@ Prerequisites
     - On Linux, you must add your user to the `vboxusers` group since this VM captures USB devices: `sudo usermod -a -G vboxusers $USER`
 - Install Vagrant    (linux:repos, mac/win:vagrantup.com)
 
-Usage
+How to use
 -----
 - `$ vagrant up`       # Creates the VM.
 - After creating the VM for the first time, you must reload it: `$ vagrant reload`
@@ -18,6 +25,7 @@ Usage
 - The VM is configured to capture relevant USB devices. When the VM is running, you will not be able to access them from the host OS.
 - **NEVER** use sudo for any of the above commands.
 - sudo is not required for programming devices from the VM.
+
 
 MSP430FR5969 Launchpad Notes
 ----------------------------
