@@ -72,11 +72,11 @@ mv keyboard /etc/default/keyboard
 
 
 echo "Setting up firefox"
-cd /home/vagrant
-rm -rf .mozilla
+rm -rf /home/vagrant/.mozilla
 wget https://raw.githubusercontent.com/Octanis1/Octanis1-dev-box/master/setup/mozzarella.tar.gz
 tar xvf mozzarella.tar.gz
-chown vagrant .mozilla -R
+mv .mozilla /home/vagrant/.mozilla
+chown vagrant /home/vagrant/.mozilla -R
 
 
 echo "Rebooting."
