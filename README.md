@@ -9,18 +9,22 @@ This Virtual Machine includes:
 - FreeCAD
 - KiCAD
 
-
-Prerequisites
--------------
-- Install VirtualBox (linux:repos, mac/win:virtualbox.org)
+Requirements
+-----
+- Install **VirtualBox** and **Vagrant** (vagrantup.com / virtualbox.org)
     - On Linux, you must add your user to the `vboxusers` group since this VM captures USB devices: `sudo usermod -a -G vboxusers $USER`
-- Install Vagrant    (linux:repos, mac/win:vagrantup.com)
 
 How to use
 -----
-- `$ vagrant up`       # Creates the VM.
-- After creating the VM for the first time, you must reload it: `$ vagrant reload`
-- `$ vagrant ssh`      # ssh into the VM. 
+1. Clone this repo, `cd` into it.
+2. `vagrant up`
+	- Creates the VM. The first time you do this, setup will take about 30min and ~10GB of disk space. While it is installing, do not use the VM! Use this command to start the VM whenever you need it.
+3. `vagrant ssh` 
+	- SSH into the VM. 
+4. Use the GUI window (for FreeCAD, KiCAD, etc.). Login with vagrant / vagrant.
+
+Good to know
+-----
 - see `vagrant -h` for info on how to suspend/shutdown/delete/etc the VM.
 - The root folder(which has the Vagrantfile) is accessible as /vagrant
 - The VM is configured to capture relevant USB devices. When the VM is running, you will not be able to access them from the host OS.
