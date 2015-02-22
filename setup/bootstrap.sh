@@ -3,6 +3,17 @@
 TI_MSPGCC_URL=http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/MSPGCC/3_02_02_00/exports/msp430-gcc-full-linux-installer-3.2.2.0.run
 TI_MSPGCC_DIR=/opt/ti-mspgcc
 
+MSP430_TOOLCHAIN_URL=http://xpg.dk/files/File/msp430/msp430-toolchain-linux-i386-2.1.tar.bz2
+MSP430_TOOLCHAIN_DIR=/opt/msp430-toolchain
+
+
+
+wget -qO timsp430_xpg.tar.gz $MSP430_TOOLCHAIN_URL
+tar xvf timsp430_xpg.tar.gz
+mv msp430-toolchain-linux-i386-2.1 $MSP430_TOOLCHAIN_DIR
+chmod -R 775 $MSP430_TOOLCHAIN_DIR
+echo 'export PATH=/opt/msp430-toolchain/bin:$PATH' >> /home/vagrant/.profile
+
 echo "Downloading TI MSPGCC"
 wget -qO installer $TI_MSPGCC_URL
 echo "Installing TI MSPGCC"
@@ -37,7 +48,7 @@ apt-get install --force-yes -y stellarium
 apt-get install --force-yes -y openjdk-7-jdk
 apt-get install --force-yes -y eclipse
 apt-get install --force-yes -y geany
-
+apt-get install --force-yes -y xfce4-terminal
 
 echo "Downloading and installing ROS"
 sh -c 'echo "deb http://packages.ros.org/ros/ubuntu trusty main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -55,6 +66,16 @@ wget http://mirror.switch.ch/eclipse/technology/epp/downloads/release/luna/SR1a/
 tar xvf eclipse-cpp-luna-SR1a-linux-gtk.tar.gz 
 mv eclipse /home/vagrant/eclipse
 ln -s /home/vagrant/eclipse/eclipse /home/vagrant/Desktop/eclipse
+echo "Installing msp430 eclipse plugin"
+/home/vagrant/eclipse/eclipse \
+-clean -purgeHistory \
+-application org.eclipse.equinox.p2.director \
+-noSplash \
+-repository http://eclipse.xpg.dk \
+-installIUs dk.xpg.msp430eclipse.feature.feature.group
+
+
+
 
 
 echo "Cloning Octanis1 repos onto Desktop"
@@ -67,6 +88,11 @@ git clone https://github.com/Octanis1/Octanis1-Energia.git /home/vagrant/Desktop
 git clone https://github.com/Octanis1/Octanis1-Documentation.git /home/vagrant/Desktop/Octanis1-Documentation
 
 chown vagrant:vagrant /home/vagrant/Desktop -R
+
+
+echo "Resolving library dependencies"
+ldconfig
+
 
 echo "Setting up keyboard to CH-DE"
 
