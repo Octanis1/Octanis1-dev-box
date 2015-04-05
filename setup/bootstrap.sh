@@ -49,6 +49,7 @@ apt-get install --force-yes -y openjdk-7-jdk
 apt-get install --force-yes -y eclipse
 apt-get install --force-yes -y geany
 apt-get install --force-yes -y xfce4-terminal
+apt-get install --force-yes -y unzip
 
 echo "Downloading and installing ROS"
 sh -c 'echo "deb http://packages.ros.org/ros/ubuntu trusty main" > /etc/apt/sources.list.d/ros-latest.list'

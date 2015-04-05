@@ -29,7 +29,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   ]
   config.vm.provider "virtualbox" do |vb|
     vb.customize ['modifyvm', :id, '--usb', 'on']
-    vb.customize ["modifyvm", :id, "--memory", "1024"]   
+    vb.customize ["modifyvm", :id, "--memory", "2048"]   
 
     usb_devs.each do |dev|
       vb.customize ['usbfilter', 'add', '0', '--target', :id, '--vendorid', dev[0], '--productid', dev[1], '--name', dev[2]]
